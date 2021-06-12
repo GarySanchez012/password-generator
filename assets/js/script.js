@@ -1,7 +1,7 @@
 // Assignment code here
 
 var generatePassword = function () {
-  var finalPassword = "aw" //finalPassword.length
+  var finalPassword = "" //finalPassword.length
   var lowercase = "abcdefghijklmnopqrstuvwxyz"
   var uppercase = "ABCDEFGHIJKLONOPQRSTUVWXYZ"
   var specialCharcters = "%$#()"
@@ -17,6 +17,7 @@ var generatePassword = function () {
   var isNumber = confirm("Does your password include number?")
   console.log(isLowerCase)
   // ending 
+
   
   if (isLowerCase) {
     var randomPickLowerCase = Math.floor(Math.random() * lowercase.length)
