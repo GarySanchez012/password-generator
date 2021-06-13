@@ -5,7 +5,7 @@ var generatePassword = function () {
   var passwordOptions = ""
   var lowerCase = "abcdefghijklmnopqrstuvwxyz"
   var upperCase = "ABCDEFGHIJKLONOPQRSTUVWXYZ"
-  var specialCharcters = "!@#$%^&*()"
+  var specialCharcters = "!@#$%^&*()[]{}\|;:',<.>/?"
   var number = "0123456789"
   var passwordSize = parseInt(prompt("How many characters would you like your password to contain?"));
   while (Number.isNaN(passwordSize) || passwordSize < 8 || passwordSize >128)

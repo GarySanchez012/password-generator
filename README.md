@@ -1,5 +1,15 @@
 # Password Generator Starter Code
-**used professors notes to help write the JS code
+
+## purpose
+password generator
+
+## built with
+* HTML
+* CSS
+* JavaScript
+
+
+** used professors notes to help write the JS code (with his permission)
 
 GIVEN I need a new, secure password
 
