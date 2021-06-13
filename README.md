@@ -8,9 +8,13 @@ password generator
 * CSS
 * JavaScript
 
+## website
+https://garysanchez012.github.io/weekly-challenge-3-password-generator/
+
 
 ** used professors notes to help write the JS code (with his permission)
 
+# criteria
 GIVEN I need a new, secure password
 
 WHEN I click the button to generate a password
