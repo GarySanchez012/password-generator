@@ -2,17 +2,21 @@
 
 var generatePassword = function () {
   var finalPassword = "" //finalPassword.length
-  var lowercase = "abcdefghijklmnopqrstuvwxyz"
-  var uppercase = "ABCDEFGHIJKLONOPQRSTUVWXYZ"
-  var specialCharcters = "%$#()"
+  var passwordOptions = ""
+  var lowerCase = "abcdefghijklmnopqrstuvwxyz"
+  var upperCase = "ABCDEFGHIJKLONOPQRSTUVWXYZ"
+  var specialCharcters = "!@#$%^&*()"
   var number = "0123456789"
-  var passwordsize = prompt("How many characters would you like your password to contain?")
-  console.log(passwordsize)
-  var isLowerCase = confirm("Does your password include lowercase?")
+  var passwordSize = parseInt(prompt("How many characters would you like your password to contain?"));
+  while (Number.isNaN(passwordSize) || passwordSize < 8 || passwordSize >128)
+  console.log(passwordSize)
+
   
-  var isUpperCase = confirm("Does your password include Uppercase?")
+  var isLowerCase = confirm("Does your password include lowerCase?")
   
-  var isSpecialCharacter= confirm("Does your password include  special?")
+  var isUpperCase = confirm("Does your password include UpperCase?")
+  
+  var isSpecialCharacter= confirm("Does your password include special?")
   
   var isNumber = confirm("Does your password include number?")
   console.log(isLowerCase)
@@ -20,26 +24,25 @@ var generatePassword = function () {
 
   
   if (isLowerCase) {
-    var randomPickLowerCase = Math.floor(Math.random() * lowercase.length)
-    var pickOneLowerCaseLetter = lowercase.charAt(randomPickLowerCase)
-    finalPassword =finalPassword+ pickOneLowerCaseLetter 
+    passwordOptions += lowerCase
+    finalPassword += lowerCase.charAt(Math.floor(Math.random())*lowerCase.length)
   }
   if(isUpperCase){
-    var randomPickUpperCase = Math.floor(Math.random() * uppercase.length)
-    var pickOneUpperCaseLetter = uppercase.charAt(randomPickUpperCase)
-    finalPassword =finalPassword+ pickOneUpperCaseLetter
+    passwordOptions += upperCase
+    finalPassword += upperCase.charAt(Math.floor(Math.random())*upperCase.length)
   }
   if(isSpecialCharacter){
-    var randomPickSpecial = Math.floor(Math.random() * specialCharcters.length)
-    var pickOneSpecialCharacterLetter = specialCharcters.charAt(randomPickSpecial)
-    finalPassword =finalPassword+ pickOneSpecialCharacterLetter
+    passwordOptions += specialCharcters
+    finalPassword += specialCharcters.charAt(Math.floor(Math.random())*specialCharcters.length)
   }
   if(isNumber){
-    var randomPickNumber = Math.floor(Math.random() * number.length)
-    var pickOneNumber = number.charAt(randomPickNumber)
-    finalPassword =finalPassword+  pickOneNumber
+    passwordOptions += number
+    finalPassword += number.charAt(Math.floor(Math.random())*number.length)
   }
-  console.log(pickOneLowerCaseLetter, pickOneUpperCaseLetter, pickOneSpecialCharacterLetter, pickOneNumber)
+  for(var i = finalPassword.length; i<passwordSize; i++){
+    finalPassword += passwordOptions.charAt(Math.floor(Math.random()*passwordOptions.length));
+  }
+  console.log(finalPassword);
   return finalPassword
 }
 
